@@ -50,10 +50,11 @@ class HumanPlayer < Player
     def search_weapon
         weapon_found = rand(1..6)
         puts "Tu as trouvé une arme de niveau #{weapon_found}"
-        if weapon_found > @weapon_found
+        if weapon_found > @weapon_level
             puts "Elle est meilleure, tu la prends!"
-            @weapon_found = weapon_found
-        else puts "Elle n'est pas vraiment mieux..." end
+            @weapon_level = weapon_found
+        else puts "Elle n'est pas vraiment mieux..." 
+        end
     end
 
     def search_health_pack
