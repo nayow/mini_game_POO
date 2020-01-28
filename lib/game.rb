@@ -25,8 +25,8 @@ class Game
     end
 
     def menu
-        puts "","-"*30,""
-        puts show_players,"-"*30
+        puts ""
+        puts show_players,"-"*50
         puts "","Quelle action veux-tu effectuer?",""
         puts "a - chercher une meilleure arme"
         puts "s - chercher à me soigner",""
@@ -35,7 +35,7 @@ class Game
             print "#{enemies.index(enemy)} - "
             print enemy.show_state
         end
-        puts ""
+        puts "","-"*50
     end
 
     def menu_choice(input)
@@ -49,21 +49,26 @@ class Game
             puts ""
             target = enemies[input.to_i]
             human_player.attacks(target)
-            if target.life_points <= 0 then kill_player(target) end
+            if target.life_points <= 0
+                kill_player(target)
+            end
         end
     end
 
     def enemies_attack
-        puts "","Les autres joueurs t'attaquent!",""
-        enemies.each {|enemy| enemy.attacks(human_player)}
+        unless enemies.length == 0
+            puts "","-"*50
+            puts "","Les autres joueurs t'attaquent!",""
+            enemies.each {|enemy| enemy.attacks(human_player)}
+        end
     end
 
-    def end
-        puts "La partie est finie!"
+    def finish
+        puts "","La partie est finie!"
         if human_player.life_points > 0
-            puts "Bravo tu as gagné!"
+            puts "Bravo tu as gagné!","","#"*50
         else 
-            puts "Loser t'as perdu!" 
+            puts "Loser t'as perdu!","","#"*50
         end
     end
 end

@@ -4,17 +4,21 @@ Bundler.require
 require_relative 'lib/game'
 require_relative 'lib/player3'
 
-puts "","-"*50
-puts "     Bienvenue sur ILS VEULENT TOUS MA POO!"
-puts "  Le but du jeu est d'être le dernier survivant!"
-puts "-"*50,""
+puts "","#"*50
+puts "","     Bienvenue sur ILS VEULENT TOUS MA POO!"
+puts "  Le but du jeu est d'être le dernier survivant!",""
+puts "#"*50,""
 
 print "Le nom de ton joueur? "
 my_game = Game.new(gets.chomp)
+puts "","#"*50
 
 while my_game.is_still_ongoing?
     my_game.menu
+    puts ""
+    print "Ton choix? "
     my_game.menu_choice(gets.chomp)
     my_game.enemies_attack
+    puts "","#"*50
 end
-my_game.end
+my_game.finish
