@@ -2,7 +2,7 @@
 require 'bundler'
 Bundler.require
 
-require_relative 'lib/game_bonus'
+require_relative 'lib/game'
 require_relative 'lib/player3'
 
 #display game header
