@@ -50,7 +50,8 @@ class HumanPlayer < Player
         if weapon_found > @weapon_level
             puts "Elle est meilleure, tu la prends!"
             @weapon_level = weapon_found
-        else puts "Elle n'est pas vraiment mieux..."
+        else 
+            puts "Elle n'est pas vraiment mieux..."
         end
     end
 

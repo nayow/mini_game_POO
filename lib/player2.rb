@@ -1,5 +1,4 @@
 class Player
-
     attr_accessor :name, :life_points
 
     def initialize(name)
@@ -26,11 +25,9 @@ class Player
     def compute_damage
         return rand(1..6)
     end
-
 end
 
 class HumanPlayer < Player
-
     attr_accessor :weapon_level
 
     def initialize(name)
@@ -69,5 +66,4 @@ class HumanPlayer < Player
             @life_points + 80 > 100 ? @life_points = 100 : @life_points += 80
         end
     end
-
 end

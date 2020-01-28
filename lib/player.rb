@@ -1,5 +1,4 @@
 class Player
-
     attr_accessor :name, :life_points
 
     def initialize(name)
@@ -26,5 +25,4 @@ class Player
     def compute_damage
         return rand(1..6)
     end
-
 end
