@@ -3,12 +3,12 @@ class Game
     attr_accessor :human_player, :enemies
 
     def initialize(name)
-        human_player = HumanPlayer.new(name)
+        @human_player = HumanPlayer.new(name)
         player1 = Player.new("Josiane")
         player2 = Player.new("José")
         player3 = Player.new("Patrick")
         player4 = Player.new("Fred")
-        enemies = [player1, player2, player3, player4]
+        @enemies = [player1, player2, player3, player4]
     end
 
     def kill_player(player)
@@ -21,18 +21,19 @@ class Game
 
     def show_players
         human_player.show_state
-        puts "Il reste #{enemies.length}"
+        puts "Il reste #{enemies.length} ennemis"
     end
 
     def menu
         puts "","-"*30,""
-        puts "Quelle action veux-tu effectuer?",""
+        puts show_players,"-"*30
+        puts "","Quelle action veux-tu effectuer?",""
         puts "a - chercher une meilleure arme"
         puts "s - chercher à me soigner",""
-        puts "attaquer un joueur en vue :"
+        puts "Attaquer un joueur en vue :",""
         enemies.each do |enemy|
             print "#{enemies.index(enemy)} - "
-            puts enemy.show_state
+            print enemy.show_state
         end
         puts ""
     end
