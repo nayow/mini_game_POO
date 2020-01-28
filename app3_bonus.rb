@@ -20,6 +20,7 @@ while my_game.is_still_ongoing?
     print "Ton choix? "
     my_game.menu_choice(gets.chomp)
     my_game.enemies_attack
+    puts "-"*50
 end
 
 my_game.finish

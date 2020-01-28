@@ -56,13 +56,13 @@ class Game
 
     def menu_choice(input)
         if input == "a"
-            puts ""
+            # puts ""
             human_player.search_weapon
         elsif input == "s"
-            puts ""
+            # puts ""
             human_player.search_health_pack
         else
-            puts ""
+            # puts ""
             target = enemies_in_sight[input.to_i]
             human_player.attacks(target)
             if target.life_points <= 0 then kill_player(target) end
@@ -71,7 +71,7 @@ class Game
 
     def enemies_attack
         unless players_left == 0 || enemies_in_sight.length == 0
-            puts "-"*50
+            puts "","-"*50
             puts "","Les autres joueurs t'attaquent!",""
             enemies_in_sight.each {|enemy| enemy.attacks(human_player)}
             puts ""
@@ -79,7 +79,7 @@ class Game
     end
 
     def finish
-        puts "La partie est finie!"
+        puts "#"*50,"","La partie est finie!"
         if human_player.life_points > 0
             puts "Bravo tu as gagné!","","#"*50
         else 
