@@ -1,9 +1,7 @@
-Ils veulent tous ma POO! 
+Ruby program
 
-__ 
+____________
 
-A ruby program
+A really nice combat game with better graphics than Fortnite!
 
-__
-
-A fantastic game with better graphics than GTA, where the goal is the kill all the enemies
+____________
